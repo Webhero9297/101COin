@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=101coin
+Comment=101coin P2P Cryptocurrency
+Comment[fr]=101coin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=101coin, eşten eşe kriptografik sanal para birimi
+Exec=101coin-qt %u
+Terminal=false
+Type=Application
+Icon=101coin128
+MimeType=x-scheme-handler/101coin;
+Categories=Office;Finance;

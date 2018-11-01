@@ -1,0 +1,26 @@
+[Unit]
+Description=101coin's distributed currency daemon
+After=network.target
+
+[Service]
+User=101coin
+Group=101coin
+
+Type=forking
+PIDFile=/var/lib/101coind/101coind.pid
+
+ExecStart=/usr/bin/101coind -daemon -pid=/var/lib/101coind/101coind.pid \
+          -conf=/etc/101coin/101coin.conf -datadir=/var/lib/101coind
+
+ExecStop=-/usr/bin/101coin-cli -conf=/etc/101coin/101coin.conf \
+         -datadir=/var/lib/101coind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
